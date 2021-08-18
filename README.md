@@ -39,7 +39,7 @@ git pull
 
 ### Installing the Tool Chain
 
-I will provide support and instructions for OSX and Linux (Ubuntu).  If you have a system running Windows, I suggest to follow the instructions [below]() to install Ubuntu using Windows Subsystem for Linux. Then follow the Ubuntu instructions for the installation of the tool chain.
+I will provide support and instructions for OSX and Linux (Ubuntu).  If you have a system running Windows, I suggest to follow the instructions [below](#installing-ubuntu-on-windows-windows-only) to install Ubuntu using Windows Subsystem for Linux. Then follow the Ubuntu instructions for the installation of the tool chain.
 
 ### Installing Ubuntu on Windows [Windows only]
 
