@@ -13,7 +13,7 @@ This will create a directory called `in-class-code` that contains the following 
 
 ```
 in-class-code
-├── build.sbt  (sbt configuration file)
+├── build.sbt  (sbt build configuration file)
 ├── README.md  (this file)
 ├── src
 │   ├── main
@@ -28,7 +28,7 @@ in-class-code
 │   │           
 │   └── test
 │       └── scala (unit tests for scala code)
-└── lib  (some libraries we will be using)
+└── project (sbt project configuration files)
 ```
 
 In order to update your local version of the repository to the most recent version on GitHub, run the following command in a terminal from inside the `in-class-code` directory:
