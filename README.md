@@ -41,7 +41,7 @@ git pull
 
 I will provide support and instructions for OSX and Linux (Ubuntu).  If you have a system running Windows, I suggest to follow the instructions [below](#installing-ubuntu-on-windows-windows-only) to install Ubuntu using Windows Subsystem for Linux. Then follow the Ubuntu instructions for the installation of the tool chain.
 
-### Installing Ubuntu on Windows [Windows only]
+#### Installing Ubuntu on Windows [Windows only]
 
 If you are using Windows 10, I suggest to proceed as follows. Install Ubuntu via the Windows Subsystem for Linux. Use e.g. the instructions in the following two tutorials to do this:
 
@@ -183,7 +183,7 @@ To import the Scala sbt project for the in-class-code into Intellij, do the foll
   same problem and may have figured it out.
 
 
-## Scala Basics
+### Scala Basics
 
 In the following, we assume that you have started the Scala
 REPL. Though, (almost) all of these steps can also be done in a Scala
