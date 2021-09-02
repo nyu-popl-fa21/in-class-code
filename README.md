@@ -5,7 +5,7 @@ This repository provides the code that we discuss in class. The repository will 
 To obtain a local copy of the repository, run the following command in a terminal (please refer to the instructions below regarding how to install and use `git`):
 
 ```bash
-git clone git@github.com:nyu-popl-fa21/in-class-code.git
+git clone https://github.com/nyu-popl-fa21/in-class-code.git
 ```
 
 This will create a directory called `in-class-code` that contains the following files:
@@ -18,12 +18,12 @@ in-class-code
 ├── src
 │   ├── main
 │   │   ├── java
-│   │   │   └── class03 (package for Java source files from Class 3)
+│   │   │   └── popl.class03 (package for Java source files from Class 3)
 │   │   │       └── JavaGreeter.scala  (a simple Java application)
 │   │   └── scala
-│   │       ├── class02 (package for Scala source files from Class 2)
+│   │       ├── popl.class02 (package for Scala source files from Class 2)
 │   │       │   └── Worksheet.sc (a simple worksheet)
-│   │       └── class03 (package for Scala source files from Class 3)
+│   │       └── popl.class03 (package for Scala source files from Class 3)
 │   │           └── ScalaGreeter.scala  (a simple Scala application)
 │   │           
 │   └── test
@@ -157,15 +157,31 @@ There are many many free plugins available for Intellij. You should feel free to
 
 To import the Scala sbt project for the in-class-code into Intellij, do the following:
 
-* Open Intellij and click the "Open" menu item.
-  (Alternatively, select "File / New / Import Project from Existing Sources" in the main menu.)
-    
-* Navigate to your cloned repository and select the "in-class-code"
-  directory and click "OK".
-  
-* Click the radio button "Open as: sbt project", then click "OK".
+* Open Intellij and proceed with one of the following two options:
 
-* Click "Trust Project".
+  Option 1:
+   
+  * Click the "Open" menu item in the splash screen after opening Intellij.
+    
+  * Navigate to your cloned repository and select the "in-class-code"
+    directory and click "OK".
+  
+  * Click the radio button "Open as: sbt project", then click "OK".
+
+  * Click "Trust Project".
+
+  Option 2:
+   
+  * If you skip the splash screen (e.g. because you already have another project opened),
+    select "File / New / Import Project from Existing Sources" in the main menu.
+  
+  * Click the radio button "Import project from external model: sbt", then click "Next".
+
+  * Under "Project JDK" select your installed JDK, e.g. "11 version 11.0.11".
+   
+  * Expand "General settings" and select your installed Java Runtime Environment under JVM/JRE, e.g. "11 version 11.0.11".
+
+  * Click "Finish".
 
 * It may take IntelliJ a few minutes to initialize the project. Future
   project imports will be faster.
@@ -173,7 +189,7 @@ To import the Scala sbt project for the in-class-code into Intellij, do the foll
 * If you are prompted with a message like "Unregistered VCS root
   detected", simply click "Add root".
 
-* Open the worksheet `src/main/scala/class02/worksheet.sc` and type in some Scala
+* Open the worksheet `src/main/scala/popl.class02/worksheet.sc` and type in some Scala
   expressions. Alternatively, start the Scala REPL by
   typing `console` in the sbt shell. If the sbt shell is not already
   open, you can open it by pressing Crtl+Shift+s [Ubuntu] or
