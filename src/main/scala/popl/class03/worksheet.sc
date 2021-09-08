@@ -1,4 +1,4 @@
-package class02
+package popl.class02
 
 import scala.annotation.tailrec
 

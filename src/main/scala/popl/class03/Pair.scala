@@ -1,4 +1,4 @@
-package class03
+package popl.class03
 
 class Pair(val first: Int, val second: Int) extends AnyRef {
   def setFirst(fst: Int) = new Pair(fst, second)

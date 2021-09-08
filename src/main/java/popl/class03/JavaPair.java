@@ -1,4 +1,4 @@
-package class03;
+package popl.class03;
 
 public class JavaPair extends Object {
   private int first;
