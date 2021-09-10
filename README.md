@@ -122,11 +122,14 @@ We will be using [Scala](http://www.scala-lang.org/) for most programming assign
 Sbt is an open source build tool for Scala projects, similar to Maven or Ant. More information can be found [here](https://en.wikipedia.org/wiki/SBT_%28software%29). (You will need this to do the homework assignments)
 
 * [OSX]  From terminal: ```brew install sbt```
-* [Ubuntu] From terminal:<br>
-   ```echo "deb https://dl.bintray.com/sbt/debian/" | sudo tee -a /etc/apt/sources.list.d/sbt.list```<br>
-   ```sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823```<br>
-   ```sudo apt-get update```<br>
-   ```sudo apt-get install sbt```
+* [Ubuntu] From terminal:<br> 
+  ```bash
+  echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+  echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+  curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
+  sudo apt-get update
+  sudo apt-get install sbt
+  ```
 * Confirm success by running the command from terminal: 
     ```sbt    ```
     (Sbt should start. Use `Ctrl+c` to quit or type `exit`.)
