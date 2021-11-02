@@ -1,4 +1,4 @@
-// Restricted JakartaScript fragment (Lambda calculus, Church 1934)
+// Restricted JakartaScript fragment (Lambda calculus, Church 1936)
 // e ::= x | e1(e2) | x => e
 
 // Expressing const declarations in the Lambda calculus
