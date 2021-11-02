@@ -42,11 +42,11 @@ const two = s => z => s(s(z))
 
 const toInt = n => n(x => x + 1)(0) 
 
+const plus = n => m => (s => z => m(s)(n(s)(z)))
+
 function fromInt(n) {
     return n === 0 ? zero : plus(one)(fromInt(n-1));
 }
-
-const plus = n => m => (s => z => m(s)(n(s)(z)))
 
 const mult = n => m => m(plus(n))(zero)
 
