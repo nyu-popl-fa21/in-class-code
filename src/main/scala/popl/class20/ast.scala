@@ -1,13 +1,10 @@
 package popl.class20
 
 import scala.util.parsing.input.Positional
-import org.kiama.output.PrettyPrinter
+//import org.kiama.output.PrettyPrinter
 
 object ast {
-  sealed abstract class Expr extends Positional {
-    // pretty print as AST
-    override def toString(): String = PrettyPrinter.pretty(this)
-  }
+  sealed abstract class Expr extends Positional
   
   /* Literals and Values */
   sealed abstract class Val extends Expr
@@ -23,7 +20,7 @@ object ast {
   /* Mutabilities */
   sealed abstract class Mut
   case object MConst extends Mut
-  case object MVar extends Mut
+  case object MLet extends Mut
   
   /* Unary and Binary Operators */
   case class UnOp(op: Uop, e1: Expr) extends Expr

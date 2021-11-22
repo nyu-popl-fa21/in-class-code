@@ -22,9 +22,9 @@ object interpreter {
   }
 
   
-  def eval(m: Mem, e: Expr): (Mem, Val) = {
-    def eToNum(m: Mem, e: Expr): (Mem, Double) = {
-      val (mp, v) = eval(m, e)
+  def eval(e: Expr): Mem => (Mem, Val) = {
+    def eToNum(e: Expr): Mem => (Mem, Double) = { m =>
+      val (mp, v) = eval(e)(m)
       v match {
         case Num(n) => (mp, n)
         case _ => throw StuckError(e)
@@ -32,37 +32,39 @@ object interpreter {
     }
     e match {
       /** rule EvalVal */
-      case v: Val => (m, v)
-      
+      case v: Val => { m => (m, v) }
+
       /** rule EvalUMinus */
-      case UnOp(UMinus, e1) =>
-        val (mp, n1) = eToNum(m, e1)
-        (mp, Num(- n1))
-      
+      case UnOp(UMinus, e1) => { m =>
+        val (mp, n1) = eToNum(e1)(m)
+        (mp, Num(-n1))
+      }
+
       /** rule EvalDeref */
       case UnOp(Deref, a: Addr) => ???
-      
+
       /** rule EvalPlus */
-      case BinOp(Plus, e1, e2) =>
-        val (mp, n1) = eToNum(m, e1)
-        val (mpp, n2) = eToNum(mp, e2)
+      case BinOp(Plus, e1, e2) => { m =>
+        val (mp, n1) = eToNum(e1)(m)
+        val (mpp, n2) = eToNum(e2)(mp)
         (mpp, Num(n1 + n2))
-      
+      }
+
       /** rule EvalAssignVar */
-      case BinOp(Assign, UnOp(Deref, a: Addr), e2) => ???       
-      
+      case BinOp(Assign, UnOp(Deref, a: Addr), e2) => ???
+
       /** rule EvalConstDecl */
-      case Decl(MConst, x, ed, eb) =>
-        val (mp, vd) = eval(m, ed)
-        eval(mp, subst(eb, x, vd))
-      
+      case Decl(MConst, x, ed, eb) => { m =>
+        val (mp, vd) = eval(ed)(m)
+        eval(subst(eb, x, vd))(mp)
+      }
+
       /** rule EvalVarDecl */
-      case Decl(MVar, x, ed, eb) =>
-        val (md, vd) = eval(m, ed)
+      case Decl(MVar, x, ed, eb) => { m =>
+        val (md, vd) = eval(ed)(m)
         val (mp, a) = md.alloc(vd)
-        eval(mp, subst(eb, x, UnOp(Deref, a)))
-        
-      case Var(_) | UnOp(Deref, _) | BinOp(_, _, _) => throw StuckError(e)
+        eval(subst(eb, x, UnOp(Deref, a)))(mp)
+      }
     }
   }
 }
