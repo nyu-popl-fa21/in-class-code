@@ -11,4 +11,9 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % 
 
 libraryDependencies += "org.bitbucket.inkytonik.kiama" % "kiama_2.13" % "2.5.0"
 
+libraryDependencies += "com.typesafe.akka" % "akka-actor_2.13" % "2.6.17"
+
+libraryDependencies +=
+  "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
+
 Test / parallelExecution := false
